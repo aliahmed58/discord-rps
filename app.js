@@ -40,7 +40,8 @@ const run = () => {
     }
 }
 
-
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}`)
 })
+
+export default app;
