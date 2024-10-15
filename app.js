@@ -2,10 +2,13 @@ import express from "express";
 import 'dotenv/config'
 import { ALL_COMMANDS } from "./commands/commands.js";
 import { createCommands } from "./commands/utils.js";
+import interactionRouter from "./interactions.js";
 
 const app = express()
 
 const PORT = process.env.PORT || 3000
+
+app.use(interactionRouter)
 
 const run = () => {
     const helpString = 'USAGE:\n\tnode app.js <option>\nOPTIONS:\n\tserver\t\truns the bot server\n\tcommands\tregisters the commands on the app' 

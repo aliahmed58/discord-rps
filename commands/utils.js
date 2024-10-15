@@ -2,6 +2,7 @@
 import { discordRequest } from "../utils.js"
 
 export const createCommands = async (appId, commands) => {
+    console.log(commands)
     const createCommandUrl = `/applications/${appId}/commands`
     try {
         const res = await discordRequest(createCommandUrl, {method: 'PUT', body: commands}) 
