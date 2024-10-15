@@ -9,6 +9,10 @@ const router = Router()
 
 const activeGames = {}
 
+router.get('/', (req, res) => {
+    res.status(200).json({works: true})
+})
+
 router.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), async (req, res) => {
     const { type, id, data, token } = req.body
 
